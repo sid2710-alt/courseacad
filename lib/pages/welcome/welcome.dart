@@ -96,9 +96,9 @@ class _WelcomeState extends State<Welcome> {
         GestureDetector(
           onTap: (){
              if(index<3){
-                pageController.animateTo(index.toDouble(), duration: duration, curve: curve)
+                pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
              } else{
-
+                Navigator.of(context).pushNamedAndRemoveUntil("signIn", (route) => false);
              }
           },
           child: Container(
