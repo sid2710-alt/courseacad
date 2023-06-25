@@ -98,7 +98,7 @@ class _WelcomeState extends State<Welcome> {
              if(index<3){
                 pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
              } else{
-                Navigator.of(context).pushNamedAndRemoveUntil("signIn", (route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil('/signIn', (route) => false);
              }
           },
           child: Container(

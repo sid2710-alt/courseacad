@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 AppBar buildAppBar(){
   return AppBar(
+    centerTitle: true,
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(1.0),
       child:
@@ -14,5 +15,30 @@ AppBar buildAppBar(){
           fontSize: 16.sp,
           fontWeight: FontWeight.normal,
         )),
+  );
+}
+Widget buildThirdPartyLogin(BuildContext context){
+  return Container(
+    margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
+
+    child:Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround ,
+      children: [
+        _reusableIcons('google'),
+        _reusableIcons('facebook'),
+        _reusableIcons('apple')
+
+      ],
+    )
+  );
+}
+Widget _reusableIcons(String iconame){
+  return GestureDetector(
+    onTap: (){},
+    child: SizedBox(
+      width: 40.w,
+      height:40.w,
+      child:Image.asset("assets/icons/$iconame.png"),
+    ),
   );
 }
