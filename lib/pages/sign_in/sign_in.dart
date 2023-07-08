@@ -1,6 +1,7 @@
 import 'package:courseacademy/pages/sign_in/widgets/sign_in_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class SignIn extends StatefulWidget {
@@ -21,8 +22,26 @@ class SignIn extends StatefulWidget {
           appBar: buildAppBar(),
           body: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                buildThirdPartyLogin(context)
+                buildThirdPartyLogin(context),
+                Center(child :reusableText('Or login Using your email')),
+                Container(
+                  padding: EdgeInsets.only(left: 25.w, right: 25.w),
+                  margin: EdgeInsets.only(top: 70.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      reusableText('Email'),
+                      SizedBox(height: 5.h,),
+                      buildTextField('Enter your email here', 'email','user'),
+                      reusableText('Password'),
+                      SizedBox(height: 5.h,),
+                      buildTextField('Enter your password here', 'password','user'),
+
+                    ],
+                  ),
+                )
               ],
             )
           ),
