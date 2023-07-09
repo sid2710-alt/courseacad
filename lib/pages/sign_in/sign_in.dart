@@ -37,7 +37,11 @@ class SignIn extends StatefulWidget {
                       buildTextField('Enter your email here', 'email','user'),
                       reusableText('Password'),
                       SizedBox(height: 5.h,),
-                      buildTextField('Enter your password here', 'password','user'),
+                      buildTextField('Enter your password here', 'password','lock'),
+                      forgetPasswordWidget(),
+                      buildLogInAndRegisterButton('Log In'),
+                      SizedBox(height: 20.h),
+                      buildLogInAndRegisterButton('Register')
 
                     ],
                   ),
