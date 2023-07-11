@@ -1,3 +1,4 @@
+import 'package:courseacademy/common/values/colors.dart';
 import 'package:courseacademy/pages/welcome/block/welcome_block.dart';
 import 'package:courseacademy/pages/welcome/block/welcome_events.dart';
 import 'package:courseacademy/pages/welcome/block/welcome_states.dart';
@@ -48,8 +49,8 @@ class _WelcomeState extends State<Welcome> {
                       bottom: 120.h,
                         child:
                     DotsIndicator(position:state.page,dotsCount: 3,mainAxisAlignment: MainAxisAlignment.center, decorator: DotsDecorator(
-                      color: Colors.grey,
-                      activeColor: Colors.blue,
+                      color: AppColors.primaryThirdElementText,
+                      activeColor: AppColors.primaryText,
                       size: const Size.square(8.0),
                       activeSize: const Size(18.0, 8.0),
                       activeShape: RoundedRectangleBorder(
@@ -79,7 +80,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             title,
             style: TextStyle(
-                color: Colors.black,
+                color: AppColors.primaryText,
                 fontSize: 24.sp,
                 fontWeight: FontWeight.normal),
           ),
@@ -88,7 +89,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             subTitle,
             style: TextStyle(
-                color: Colors.black.withOpacity(0.5),
+                color: AppColors.primarySecondaryElementText,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.normal),
           ),
@@ -107,7 +108,7 @@ class _WelcomeState extends State<Welcome> {
             height: 50.w,
             width: 325.w,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColors.primaryElement,
               borderRadius:
               BorderRadius.all(Radius.circular(15.w)),
               boxShadow: [

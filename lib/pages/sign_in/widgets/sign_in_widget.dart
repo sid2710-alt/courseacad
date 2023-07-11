@@ -22,6 +22,7 @@ AppBar buildAppBar() {
 Widget buildThirdPartyLogin(BuildContext context) {
   return Container(
       margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
+      padding: EdgeInsets.only(right: 25.h, left: 25.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -94,11 +95,11 @@ Widget buildTextField(String text, String textType, String iconName) {
                       borderSide: BorderSide(
                     color: Colors.transparent,
                   )),
-                  hintStyle: TextStyle(
-                    color: Colors.grey.withOpacity(0.5),
+                  hintStyle: const TextStyle(
+                    color: AppColors.primarySecondaryElementText,
                   )),
               style: TextStyle(
-                  color: Colors.black,
+                  color: AppColors.primaryText,
                   fontFamily: "Avenir",
                   fontWeight: FontWeight.normal,
                   fontSize: 15.sp),
@@ -118,9 +119,9 @@ Widget forgetPasswordWidget() {
       onTap: () {},
       child: const Text('Forget Password',
           style: TextStyle(
-            color: Colors.black,
+            color: AppColors.primaryText,
             decoration: TextDecoration.underline,
-            decorationColor: Colors.blue,
+            decorationColor: AppColors.primaryText,
             fontSize: 15,
           )),
     ),

@@ -28,7 +28,7 @@ class SignIn extends StatefulWidget {
                 Center(child :reusableText('Or login Using your email')),
                 Container(
                   padding: EdgeInsets.only(left: 25.w, right: 25.w),
-                  margin: EdgeInsets.only(top: 70.h),
+                  margin: EdgeInsets.only(top: 36.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
