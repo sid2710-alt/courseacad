@@ -1,3 +1,5 @@
+import 'package:courseacademy/pages/block_providers.dart';
+import 'package:courseacademy/pages/register/register.dart';
 import 'package:courseacademy/pages/sign_in/block/sign_in_blocks.dart';
 import 'package:courseacademy/pages/sign_in/sign_in.dart';
 import 'package:courseacademy/pages/welcome/block/welcome_block.dart';
@@ -20,10 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => WelcomeBloc()),
-        BlocProvider(create: (context) => SignInBlock()),
-      ],
+      providers: ApplyBlocProviders.lisBlockProvider,
       child: ScreenUtilInit(
           builder: (context, child) => MaterialApp(
                 debugShowCheckedModeBanner: false,
@@ -33,6 +32,7 @@ class MyApp extends StatelessWidget {
                 home: const Welcome(),
                 routes: {
                   '/signIn': (context) => const SignIn(),
+                  '/register':(context)=> const Register(),
                   // '/myHomePage': (context) => const MyHomePage(),
                 },
               )),

@@ -1,4 +1,5 @@
 import 'package:courseacademy/pages/sign_in/block/sign_in_blocks.dart';
+import 'package:courseacademy/pages/sign_in/block/sign_in_controlller.dart';
 import 'package:courseacademy/pages/sign_in/block/sign_in_events.dart';
 import 'package:courseacademy/pages/sign_in/widgets/sign_in_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -51,9 +52,13 @@ class SignIn extends StatefulWidget {
                                 PasswordEvent(value));
                           }),
                           forgetPasswordWidget(),
-                          buildLogInAndRegisterButton('Log In'),
+                          buildLogInAndRegisterButton('Log In', (){
+                            SignInController(context: context).handleSignIn('email');
+                          }),
                           SizedBox(height: 20.h),
-                          buildLogInAndRegisterButton('Register')
+                          buildLogInAndRegisterButton('Register',(){
+                            Navigator.of(context).pushNamed('/register');
+                          })
 
                         ],
                       ),
