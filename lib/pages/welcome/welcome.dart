@@ -6,6 +6,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -99,7 +100,8 @@ class _WelcomeState extends State<Welcome> {
              if(index<3){
                 pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
              } else{
-                Navigator.of(context).pushNamedAndRemoveUntil('/signIn', (route) => false);
+               print('hi');
+                GoRouter.of(context).pushNamed('signIn');
              }
           },
           child: Container(

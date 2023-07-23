@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import 'block/signin_states.dart';
 
@@ -57,7 +58,7 @@ class SignIn extends StatefulWidget {
                           }),
                           SizedBox(height: 20.h),
                           buildLogInAndRegisterButton('Register',(){
-                            Navigator.of(context).pushNamed('/register');
+                            GoRouter.of(context).pushNamed('register');
                           })
 
                         ],

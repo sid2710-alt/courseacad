@@ -4,6 +4,7 @@ import 'package:courseacademy/pages/sign_in/block/sign_in_blocks.dart';
 import 'package:courseacademy/pages/sign_in/sign_in.dart';
 import 'package:courseacademy/pages/welcome/block/welcome_block.dart';
 import 'package:courseacademy/pages/welcome/welcome.dart';
+import 'package:courseacademy/routes/app_route_configurations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,17 +25,17 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: ApplyBlocProviders.lisBlockProvider,
       child: ScreenUtilInit(
-          builder: (context, child) => MaterialApp(
+          builder: (context, child) => MaterialApp.router(
+            // routeInformationProvider: MyAppRouteConfigurations().router.routeInformationProvider,
+            //     routeInformationParser:
+            //         MyAppRouteConfigurations().router.routeInformationParser,
+            //     routerDelegate:
+            //         MyAppRouteConfigurations().router.routerDelegate,
+            routerConfig: MyAppRouteConfigurations().router,
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
                     appBarTheme: const AppBarTheme(
                         elevation: 0, backgroundColor: Colors.white)),
-                home: const Welcome(),
-                routes: {
-                  '/signIn': (context) => const SignIn(),
-                  '/register':(context)=> const Register(),
-                  // '/myHomePage': (context) => const MyHomePage(),
-                },
               )),
     );
   }
