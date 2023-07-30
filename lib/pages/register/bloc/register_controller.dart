@@ -28,7 +28,8 @@ class RegisterController {
           return;
         }
         if (password.isEmpty) {
-          toastInfo(message: 'Your password is Empty');
+          print(password);
+          toastInfo(message: 'Your password is not Empty');
           return;
         }
         if (rePassword.isEmpty) {

@@ -32,7 +32,7 @@ class SignInController {
             toastInfo(message: 'User does not exist');
             return;
           }
-          if (user!.emailVerified) {
+          if (!user!.emailVerified) {
             toastInfo(message: 'Your email is not verified');
             return;
           }
