@@ -70,67 +70,69 @@ class _WelcomeState extends State<Welcome> {
   }
 
   Widget _page(int index,BuildContext context, String buttonName, String title, String subTitle, String imagePath){
-    return Column(
-      children: [
-        SizedBox(
-          width: 345.w,
-          height: 345.w,
-          child: Image.asset(imagePath, fit: BoxFit.cover),
-        ),
-        Container(
-          child: Text(
-            title,
-            style: TextStyle(
-                color: AppColors.primaryText,
-                fontSize: 24.sp,
-                fontWeight: FontWeight.normal),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            width: 345.w,
+            height: 345.w,
+            child: Image.asset(imagePath, fit: BoxFit.cover),
           ),
-        ),
-        Container(
-          child: Text(
-            subTitle,
-            style: TextStyle(
-                color: AppColors.primarySecondaryElementText,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.normal),
-          ),
-        ),
-        GestureDetector(
-          onTap: (){
-             if(index<3){
-                pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
-             } else{
-               print('hi');
-                GoRouter.of(context).pushNamed('signIn');
-             }
-          },
-          child: Container(
-            margin: EdgeInsets.only(
-                top: 100.h, left: 25.w, right: 25.w),
-            height: 50.w,
-            width: 325.w,
-            decoration: BoxDecoration(
-              color: AppColors.primaryElement,
-              borderRadius:
-              BorderRadius.all(Radius.circular(15.w)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 1,
-                  blurRadius: 2,
-                )
-              ],
+          Container(
+            child: Text(
+              title,
+              style: TextStyle(
+                  color: AppColors.primaryText,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.normal),
             ),
-            child: Center(
-                child: Text(buttonName,style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.normal),
-                )),
           ),
-        ),
+          Container(
+            child: Text(
+              subTitle,
+              style: TextStyle(
+                  color: AppColors.primarySecondaryElementText,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.normal),
+            ),
+          ),
+          GestureDetector(
+            onTap: (){
+               if(index<3){
+                  pageController.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
+               } else{
+                 print('hi');
+                  GoRouter.of(context).pushNamed('signIn');
+               }
+            },
+            child: Container(
+              margin: EdgeInsets.only(
+                  top: 100.h, left: 25.w, right: 25.w),
+              height: 50.w,
+              width: 325.w,
+              decoration: BoxDecoration(
+                color: AppColors.primaryElement,
+                borderRadius:
+                BorderRadius.all(Radius.circular(15.w)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 2,
+                  )
+                ],
+              ),
+              child: Center(
+                  child: Text(buttonName,style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.normal),
+                  )),
+            ),
+          ),
 
-      ],
+        ],
+      ),
     );
   }
 }
