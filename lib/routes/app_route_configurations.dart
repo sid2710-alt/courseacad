@@ -1,3 +1,4 @@
+import 'package:courseacademy/pages/application/application_pages.dart';
 import 'package:courseacademy/pages/register/register.dart';
 import 'package:courseacademy/pages/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ GoRouter router = GoRouter(
       name: 'home',
       path: '/',
       pageBuilder: (context, state) {
-        return const MaterialPage(child: Welcome());
+        return const MaterialPage(child: ApplicationPage());
       },
       routes: <RouteBase> [
         GoRoute(
